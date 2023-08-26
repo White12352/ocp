@@ -56,7 +56,7 @@ jobs:
           git checkout ${{ env.commit }}
           echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
       - name: Extra Modify
-        if: ${{ env.commit }}
+        if: ${{ env.commit && matrix.job.userName!=='FongMi' }}
         working-directory: TVBoxOSC
         run: |
           echo '修改VersionName'
