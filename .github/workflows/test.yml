@@ -25,12 +25,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: q215613905
-            repoName: TVBoxOS
-            branchName: main
-          - userName: takagen99
-            repoName: Box
-            branchName: main
           - userName: FongMi
             repoName: TV
             branchName: release
@@ -55,19 +49,6 @@ jobs:
           cd TVBoxOSC
           git checkout ${{ env.commit }}
           echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
-      - name: Compress Source Code
-        if: ${{ env.commit }}
-        working-directory: TVBoxOSC
-        run: |
-          #zip -q -x ".git/*" -x  ".github/*" -r source-${{ env.commitS }}.zip .
-          tar -cJf source-${{ env.commitS }}.tar.xz --exclude=.git --exclude=.github *
-      - name: Option For Test
-        if: ${{ inputs.testOption }}
-        working-directory: TVBoxOSC
-        run: |
-          #添加arm64支持，不支持ijk解码
-          sed -i "/armeabi-v7a[\'\"]$/s#\$#, 'arm64-v8a'#" app/build.gradle
-          sed -i "/armeabi-v7a[\'\"]$/s#\$#, 'arm64-v8a'#" player/build.gradle
       - name: Release Apk Sign
         if: ${{ env.commit }}
         working-directory: TVBoxOSC
