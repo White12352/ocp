@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: LyOuYang
-            repoName: TV
-            branchName: release
+          - userName: XiaoRanLiu3119
+            repoName: TVBoxOS
+            branchName: main
     steps:
       - name: Checkout
         uses: actions/checkout@v3
