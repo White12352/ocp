@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: FongMi
-            repoName: TV
-            branchName: dev
+          - userName: txshow
+            repoName: FMTV
+            branchName: kitkat
     steps:
       - name: Checkout
         uses: actions/checkout@v3
