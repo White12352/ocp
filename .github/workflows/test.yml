@@ -27,7 +27,7 @@ jobs:
         include:
           - userName: FongMi
             repoName: TV
-            branchName: release
+            branchName: dev
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -71,7 +71,7 @@ jobs:
         working-directory: TV
         run: |
           chmod +x gradlew
-          ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
+          ./gradlew assemblerelease
       - name: Prepare App
         run: |
           mkdir -p ${{ github.workspace }}/apk/
