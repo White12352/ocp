@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: takagen99
-            repoName: BearTV
-            branchName: release
+          - userName: xinyi1984
+            repoName: TV
+            branchName: dev
     steps:
       - name: Checkout
         uses: actions/checkout@v3
