@@ -27,7 +27,7 @@ jobs:
         include:
           - userName: FongMi
             repoName: TV
-            branchName: release
+            branchName: dev
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -92,7 +92,6 @@ jobs:
         with:
           name: ${{ env.tag }}
           tag: ${{ env.tag }}
-          bodyFile: ${{ github.workspace }}/apk/${{ matrix.userName }}-Release.log
           allowUpdates: true
           removeArtifacts: true
           artifacts: |
