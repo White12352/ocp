@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: xinyi1984
+          - userName: White12352
             repoName: TV
-            branchName: release
+            branchName: dev2
     steps:
       - name: Checkout
         uses: actions/checkout@v3
