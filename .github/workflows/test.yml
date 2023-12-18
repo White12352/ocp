@@ -25,9 +25,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: White12352
+          - userName: xinyi1984
             repoName: TV
-            branchName: kitkat
+            branchName: release
     steps:
       - name: Checkout
         uses: actions/checkout@v3
