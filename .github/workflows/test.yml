@@ -27,7 +27,7 @@ jobs:
         include:
           - userName: White12352
             repoName: TV
-            branchName: dev
+            branchName: kitkat
     steps:
       - name: Checkout
         uses: actions/checkout@v3
